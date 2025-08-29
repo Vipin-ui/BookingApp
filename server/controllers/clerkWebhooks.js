@@ -18,8 +18,8 @@ const clerkWebhooks =async (req,res)=>{
         const userData ={
             _id:data.id,
             email:data.email_addresses[0].email_addresses,
-            username:data.first_name+" "+data.last_name,
-            image:data.image_url,
+            username:data.first_name +" "+ data.last_name,
+            image: data.image_url,
         }
 
         switch (type) {
@@ -39,13 +39,13 @@ const clerkWebhooks =async (req,res)=>{
             break;
           
         }
-        res.json({success:true,Message: "Webhook Recieved"})
+        res.json({success: true, message: "Webhook Recieved"})
 
 
     }catch(error)
     {
         console.log(error.message);
-        res.json({succes:false,message:error.message});
+        res.json({succes:false, message: error.message});
 
 
     }
